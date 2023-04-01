@@ -7,7 +7,7 @@ class Birthday extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.indigo,
+        backgroundColor: Colors.blue,
         title: Text('BirthDay Card'),
       ),
       body: Center(
@@ -16,7 +16,7 @@ class Birthday extends StatelessWidget {
             children: [
               Image(height: 300,
                   width: double.infinity,
-                  image: NetworkImage('https://thumbs.dreamstime.com/b/happy-birthday-cupcake-celebration-message-160558421.jpg')
+                  image: NetworkImage('https://images.app.goo.gl/zo8V2md6shvFz5xu6')
               ),
               Text('Happy BirthDay to You!!',
                 style: TextStyle(fontSize: 30,color: Colors.indigo),
