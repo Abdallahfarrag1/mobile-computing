@@ -1,59 +1,58 @@
 import 'package:flutter/material.dart';
-
-class BusinessCard extends StatelessWidget {
-  const BusinessCard({Key? key}) : super(key: key);
-
+class BusinessCard extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green[200],
-      body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(18),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CircleAvatar(
-                  radius: 60,
-                  backgroundImage: NetworkImage('https://www.fotor.com/blog/profile-picture-ideas/'),
+      body: Container(
 
-                ),
-                SizedBox(height: 10,),
-                Text('Mohamed Mahmoud',
-                  style: TextStyle(fontSize: 30,color: Colors.white,fontFamily: 'Pacifico'),
-                ),
-                Text('Flutter Developer',
-                  style: TextStyle(
-                    letterSpacing: 1.5,
-                      fontSize: 29,color: Colors.grey[100]),
-                ),
-                Divider(
-                  height: 20,
-                  color: Colors.grey[200],
-                  thickness: 2,
-                  endIndent: 97,
-                  indent: 97,
-                ),
-                Card(
-                  child: ListTile(
-                    leading: Icon(Icons.email_outlined,color: Colors.green[200]),
-                    title: Text('af1497@fayoum.edu.eg'),
-                  ),
-                ),
-                SizedBox(height: 10,),
-                Card(
-
-                  child: ListTile(
-                    leading:Icon(Icons.phone,color: Colors.green[200],) ,
-
-                    title: Text('+201016706290'),
-                  ),
-                )
-
-              ],
+        color: Colors.teal,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CircleAvatar(backgroundImage:AssetImage('assets/image/abd.png'),radius: 70,),
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Text('Abdallah Farrag',style: TextStyle(fontSize: 25,color: Colors.white,fontFamily: 'Pacifico'),),
             ),
-          )
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Text('FLUTTER DEVELOPER',style: TextStyle(fontSize: 15,color: Colors.white,),),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Container(
+                height: 70,
+
+                child: Card(
+                  margin: EdgeInsets.fromLTRB(25,10,25,10),
+                  child: Row(children: [
+                  Icon(Icons.phone,color: Colors.teal,),
+                  Text('     +201016706290'),
+
+                ],),),
+              ),
+            ),
+            Container(
+              height: 70,
+
+              child: Card(
+                shape:RoundedRectangleBorder(
+
+                  borderRadius: BorderRadius.circular(3.0),
+                ),
+
+                margin: EdgeInsets.fromLTRB(25,10,25,10),
+                child: Row(children: [
+
+                Icon(Icons.mail_outline,color: Colors.teal,),
+                Text('     Abdallah@fayoum.edu.eg'),
+
+              ],),),
+            )
+          ],
+        ),
       ),
     );
   }
+
 }
