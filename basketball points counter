@@ -1,0 +1,131 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(BasketballPointsCounter());
+
+class BasketballPointsCounter extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Basketball score Counter',
+      home: PointsCounter(),
+    );
+  }
+}
+
+class PointsCounter extends StatefulWidget {
+  @override
+  _PointsCounterState createState() => _PointsCounterState();
+}
+
+class _PointsCounterState extends State<PointsCounter> {
+  int _teamAScore = 0;
+  int _teamBScore = 0;
+
+  void _incrementTeamAScore(int points) {
+    setState(() {
+      _teamAScore += points;
+    });
+  }
+
+  void _incrementTeamBScore(int points) {
+    setState(() {
+      _teamBScore += points;
+    });
+  }
+
+  void _resetScores() {
+    setState(() {
+      _teamAScore = 0;
+      _teamBScore = 0;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Basketball Points Counter'),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text(
+                'Team A',
+                style: TextStyle(fontSize: 24.0),
+              ),
+              Text(
+                'Team B',
+                style: TextStyle(fontSize: 24.0),
+              ),
+            ],
+          ),
+          SizedBox(height: 16.0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text(
+                '$_teamAScore',
+                style: TextStyle(fontSize: 48.0),
+              ),
+              Text(
+                '$_teamBScore',
+                style: TextStyle(fontSize: 48.0),
+              ),
+            ],
+          ),
+          SizedBox(height: 16.0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                onPressed: () => _incrementTeamAScore(1),
+                child: Text('+1'),
+              ),
+              ElevatedButton(
+                onPressed: () => _incrementTeamBScore(1),
+                child: Text('+1'),
+              ),
+            ],
+          ),
+          SizedBox(height: 16.0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                onPressed: () => _incrementTeamAScore(2),
+                child: Text('+2'),
+              ),
+              ElevatedButton(
+                onPressed: () => _incrementTeamBScore(2),
+                child: Text('+2'),
+              ),
+            ],
+          ),
+          SizedBox(height: 16.0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                onPressed: () => _incrementTeamAScore(3),
+                child: Text('+3'),
+              ),
+              ElevatedButton(
+                onPressed: () => _incrementTeamBScore(3),
+                child: Text('+3'),
+              ),
+            ],
+          ),
+          SizedBox(height: 16.0),
+          ElevatedButton(
+            onPressed: _resetScores,
+            child: Text('Reset Scores'),
+          ),
+        ],
+      ),
+    );
+  }
+}
